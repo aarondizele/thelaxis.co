@@ -7,6 +7,8 @@
     <title>TheLaxis | Get your own personal social network mobile apps and website.</title>
     <!-- Font Awesome -->
     <script src="https://use.fontawesome.com/c7735c3551.js"></script>
+    <!-- Emoji CSS -->
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <!--  -->
     <link rel="icon" type="image/svg" sizes="32x32" href="<%= htmlWebpackPlugin.files.publicPath %>static/img/icons/thelaxis.svg">
     <link rel="icon" type="image/svg" sizes="16x16" href="<%= htmlWebpackPlugin.files.publicPath %>static/img/icons/thelaxis.svg">
@@ -31,68 +33,84 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
   </head>
   <style>
-    #loading {
-      background-color: rgb(246, 249, 252);
-      height: 100vh;
-      width: 99vw;
-      padding: 0 -16px -16px -16px;
-      margin: -16px -32px -16px -16px;
-      /* margin-top: -16px; */
-      overflow: hidden;
-      box-sizing: border-box;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .my-container {
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
     }
-  
-    .spinner {
-      margin: 100px auto 0;
+    .my-sub-container {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: auto;
+      filter: url('#goo');
+      animation: rotate-move 2s ease-in-out infinite;
+    }
+    .dot { 
       width: 70px;
-      text-align: center;
+      height: 70px;
+      border-radius: 50%;
+      background-color: #000;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
     }
-  
-    .spinner>div {
-      width: 18px;
-      height: 18px;
-      background-color: #333;
-      border-radius: 100%;
-      display: inline-block;
-      -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-      animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+
+    .dot-3 {
+      background-color: #f74d75;
+      animation: dot-3-move 2s ease infinite, index 6s ease infinite;
     }
-  
-    .spinner .bounce1 {
-      -webkit-animation-delay: -0.32s;
-      animation-delay: -0.32s;
+
+    .dot-2 {
+      background-color: #10beae;
+      animation: dot-2-move 2s ease infinite, index 6s -4s ease infinite;
     }
-  
-    .spinner .bounce2 {
-      -webkit-animation-delay: -0.16s;
-      animation-delay: -0.16s;
+
+    .dot-1 {
+      background-color: #ffe386;
+      animation: dot-1-move 2s ease infinite, index 6s -2s ease infinite;
     }
-  
-    @-webkit-keyframes sk-bouncedelay {
-      0%,
-      80%,
-      100% {
-        -webkit-transform: scale(0)
-      }
-      40% {
-        -webkit-transform: scale(1.0)
-      }
+
+    @keyframes dot-3-move {
+      20% {transform: scale(1)}
+      45% {transform: translateY(-18px) scale(.45)}
+      60% {transform: translateY(-90px) scale(.45)}
+      80% {transform: translateY(-90px) scale(.45)}
+      100% {transform: translateY(0px) scale(1)}
     }
-  
-    @keyframes sk-bouncedelay {
-      0%,
-      80%,
-      100% {
-        -webkit-transform: scale(0);
-        transform: scale(0);
-      }
-      40% {
-        -webkit-transform: scale(1.0);
-        transform: scale(1.0);
-      }
+
+    @keyframes dot-2-move {
+      20% {transform: scale(1)}
+      45% {transform: translate(-16px, 12px) scale(.45)}
+      60% {transform: translate(-80px, 60px) scale(.45)}
+      80% {transform: translate(-80px, 60px) scale(.45)}
+      100% {transform: translateY(0px) scale(1)}
+    }
+
+    @keyframes dot-1-move {
+      20% {transform: scale(1)}
+      45% {transform: translate(16px, 12px) scale(.45)}
+      60% {transform: translate(80px, 60px) scale(.45)}
+      80% {transform: translate(80px, 60px) scale(.45)}
+      100% {transform: translateY(0px) scale(1)}
+    }
+
+    @keyframes rotate-move {
+      55% {transform: translate(-50%, -50%) rotate(0deg)}
+      80% {transform: translate(-50%, -50%) rotate(360deg)}
+      100% {transform: translate(-50%, -50%) rotate(360deg)}
+    }
+
+    @keyframes index {
+      0%, 100% {z-index: 3}
+      33.3% {z-index: 2}
+      66.6% {z-index: 1}
     }
   </style>
   <body>
@@ -101,13 +119,21 @@
     </noscript>
     <div id="app">
       <!-- When loading -->
-      <div id="loading">
-        <div class="spinner">
-          <div class="bounce1"></div>
-          <div class="bounce2"></div>
-          <div class="bounce3"></div>
+      <div id="my-container">
+        <div class="my-sub-container">
+          <div class="dot dot-1"></div>
+          <div class="dot dot-2"></div>
+          <div class="dot dot-3"></div>
         </div>
       </div>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" />
+          </filter>
+        </defs>
+      </svg>
     </div>
     <!-- Todo: only include in production -->
     <%= htmlWebpackPlugin.options.serviceWorkerLoader %>

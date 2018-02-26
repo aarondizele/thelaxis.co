@@ -1,0 +1,161 @@
+$button-text-transform := none
+
+// 
+@import '~vuetify/src/stylus/main'
+
+// 
+html {
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+.layout--footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+// 
+.my-headline {
+  font-size: 20px !important;
+}
+.back_button {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+.my-divider {
+  height: 6px;
+  width: 25%;
+  border-radius: 1.5px;
+  -webkit-border-radius: 1.5px;
+  border-radius: 1.5px;
+}
+/* Box */
+.box--icon {
+  font-size: 64px !important;
+}
+.box {
+  width: 30%;
+  height: 160px;
+  max-width: 160px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 5px;
+}
+.box--transparent {
+  background: transparent;
+}
+.box--dark {
+  background: rgb(39, 39, 39);
+}
+.box--green {
+  background: #2afd8c;
+}
+.box--muted {
+  background: #e90052;
+}
+/* --- */
+.disclaimer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+/* Get started button */
+.price {
+  background-image: linear-gradient(-180deg,#fd7054 0,#ff3b6a 100%);
+  box-shadow: 0 7px 29px 0 rgba(254,89,105,.3);
+  margin-right: 10px;
+  color: #fff;
+}
+.get-started {
+  border: none;
+  color: #646467;
+  background-color: #fff;
+  box-shadow: 0 0 2px 0 rgba(44,47,51,.15), 0 3px 16px 0 #e9e9ea, inset 0 -4px 8px 0 rgba(0,0,0,.03);
+  border-radius: 100px;
+}
+.theme--light .toolbar {
+    background-color: transparent;
+}
+a {
+  text-decoration: none;
+}
+.application.theme--light {
+    background: #fff url(../assets/shields--featured--enterprise.svg) repeat center center;
+}
+.input-group--select .input-group__selections {
+    width: 4%;
+}
+.btn {
+  text-transform: none;
+  font-size: 16px!important;
+  font-weight: 400 !important;
+}
+.my-card {
+  background-color: transparent !important;
+  border: 1px solid rgba(0,0,0,0.1) !important;
+  border-radius: 3px !important;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.06) !important;
+}
+.my-btn {
+  font-size: 21px !important;
+  width: 44% !important;
+}
+/* Custom generic CSS */
+.display-flex {
+  display: flex;
+}
+.row {
+  flex-direction: row;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.align-items-center {
+  align-items: center;
+}
+.justify-content-start {
+  justify-content: flex-start;
+}
+.text-uppercase {
+  text-transform: uppercase !important
+}
+.pointer {
+  cursor: pointer;
+}
+.font-weight-light {
+  font-weight: 400 !important;
+}
+.font-weight-lighter {
+  font-weight: 300 !important;
+}
+.font-weight-bold {
+  font-weight: 500 !important;
+}
+.font-weight-bolder {
+  font-weight: 700 !important;
+}
+@media only screen and (max-width: 767px) {
+  .my-btn {
+    width: 100% !important;
+  }
+  .main--footer {
+    order: 2;
+    margin-top: 5px;
+  }
+  .questions--div {
+    order: 1;
+  }
+  .layout--footer {
+    flex-flow: column wrap;
+    align-items: center;
+  }
+  .theme--light .toolbar {
+    background-color: #ffffff;
+  }
+}

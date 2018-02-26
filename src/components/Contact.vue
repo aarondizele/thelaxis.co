@@ -1,6 +1,6 @@
 <template>
   <v-layout column>
-    <v-btn icon @click="$router.back()" class="back_button">
+    <v-btn icon @click="$router.back()" class="back_button hidden-sm-and-down">
       <v-icon large color="blue">arrow_back</v-icon>
     </v-btn>
     <v-flex xs12 md6 offset-md3>
@@ -81,27 +81,3 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.back_button {
-  position: absolute;
-  top: 5%;
-  left: 5%;
-}
-.my-divider {
-  height: 6px;
-  width: 20%;
-  border-radius: 1.5px;
-  -webkit-border-radius: 1.5px;
-  border-radius: 1.5px;
-}
-.input-group--text-field.input-group--multi-line textarea {
-  resize: none;
-}
-@media only screen and (max-width: 767px) {
-  .back_button {
-    top: 0%;
-    left: 0%;
-  }
-}
-</style>

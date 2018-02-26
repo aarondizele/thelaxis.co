@@ -1,6 +1,6 @@
-# ala-carte
+# TheLaxis.co
 
-> A Vue.js project
+> TheLaxis.co is a startup that builds for everyone a personal social network (blog included) mobile apps and website for only $750.
 
 ## Build Setup
 

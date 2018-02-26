@@ -11,20 +11,19 @@ export default new Router({
     },
     {
       path: '*',
-      redirect: '/'
+      component: require('@/components/Home').default
     },
     {
       path: '/contact-us',
       component: require('@/components/Contact').default
     },
     {
-      path: '/terms',
-      component: require('@/components/Terms').default
-    },
-    {
       path: '/get-started',
       component: require('@/components/Getstarted').default
     }
   ],
-  mode: 'history'
+  mode: 'history',
+  scrollBehavior(to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })

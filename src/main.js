@@ -5,30 +5,14 @@ import 'babel-polyfill'
 import firebase from 'firebase'
 require('firebase/firestore')
 import {
-  Vuetify,
-  VApp,
-  VFooter,
-  VBtn,
-  VIcon,
-  VToolbar,
-  transitions,
-  VCard,
-  VForm,
-  VGrid
+  Vuetify, VApp, VBtn, VCard, VFooter, VForm, VGrid, VIcon, VList, VMenu, VTabs, VTextField, VToolbar, transitions
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
+import './stylus/main.styl'
 import { Ripple } from 'vuetify/es5/directives'
 Vue.use(Vuetify, {
   components: {
-    VApp,
-    VFooter,
-    VBtn,
-    VIcon,
-    VToolbar,
-    transitions,
-    VCard,
-    VForm,
-    VGrid
+    VApp, VBtn, VCard, VFooter, VForm, VGrid, VIcon, VList, VMenu, VTabs, VTextField, VToolbar, transitions
   },
   directives: {
     Ripple
@@ -48,7 +32,6 @@ Vue.use(Vuetify, {
     lxsmuted: '#646467'
   }
 })
-import Vue from 'vue';
 
 Vue.config.productionTip = true
 
